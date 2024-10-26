@@ -44,6 +44,7 @@ p{
     width: 500px;
 	height: 400px;
     display: table;
+    table-layout: fixed;
 }
 
 .tictactoe td{
@@ -52,7 +53,7 @@ p{
     border-color: antiquewhite;
 
     height: 70px;
-    display: table-cell;
+    word-wrap: break-word;
 
     color: rgb(197, 64, 144);
     font-size: 70px;
