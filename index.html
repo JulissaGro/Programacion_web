@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--Contiene metadatos correspondientes a la página-->
+    <meta charset="UTF-8"> <!--En qué encoding estará la página-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Para cuando se consulta en móviles-->
+    <title>Web Server de Julissa</title>
+</head>
+<!--
+    Las etiquetas pueden tener atributos
+    Body es la estiqueta y style es el atributo
+-->
+<body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: blanchedalmond; background-color: rgba(71, 61, 139, 0.935);">
+    <div style="width: 1000px; margin-left: auto; margin-right: auto; background-color: darkslateblue;">
+        <!--Elementos contenedores, contienen otros elementos-->
+        <h1>Web Server de Julissa</h1>
+        <p>Té de manzanilla, este es un web server de prueba, aquí están algunas
+            aplicaciones de la materia de <strong style="color: aqua;">Programación Web</strong>
+        </p>
+        <h2>Prácticas</h2>
+        <!--ul es una lista no numerada, cada li es un item, un elemento a es un link, llamado
+            anchor-->
+        <ul>
+            <li><a href="Practica01_Explicacion01/" style="color: greenyellow;">Práctica 01 | Librería</a></li>
+            <li><a href="Explicacion02/" style="color: greenyellow;">Explicación 02 | Javascript</a></li>
+            <li><a href="Practica02/" style="color: greenyellow;">Práctica 02 | Tic Tac Toe</a></li>
+            <li><a href="Explicacion03/" style="color: greenyellow;">Explicacion 03 | Funciones como parámetro de otras</a></li>
+        </ul>
+        <hr> <!--Linea divisora-->
+        <h1>Solo para pruebas</h1>
+        <p>
+            Este server solo sirve para pruebas, no apto para producción.
+        </p>
+        <!--Para formularios-->
+        <fieldset style="width: 300px;">
+            <legend>Login</legend>
+            <table>
+                <tr>
+                    <td>
+                         <!--El atributo 'for' nos ayuda a saber a quíen estamos especificando-->
+                        <label for="txt-username">Username: </label>
+                    </td>
+                    <!--No hay necesidad de poner un width en cada elemento, el propio navegador
+                        se encarga de darle el tamaño a los demás, eso, en este caso que es una
+                        tabla.-->
+                    <td style="width: 250px;">
+                        <!--Input de tipo text (de los más comunes), para username-->
+                        <input type="text" name="Username" id="txt-username" style="width: 100%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!--Input de tipo text, para password-->
+                        <label for="txt-password">Password</label>
+                    </td>
+                    <td>
+                        <!--Los tamaños en relación al porcentaje es relativo-->
+                        <input type="password" name="Password" id="txt-password" style="width: 100%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" style="width: 100%;">Entrar</button>
+                    </td>
+                </tr>
+            </table>
+
+            <!--Los atributos id nos permiten identificar los elementos de otros-->
+            <!--Existen distintos tipos de input (de text-box), las cuales se definen
+                en el atributo Type: email, URL, date, text, password
+            -->
+        </fieldset>
+    </div>
+    
+</body>
+</html>
