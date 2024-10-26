@@ -1,0 +1,145 @@
+body {
+    margin: 0%;
+    background-color:aliceblue;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+div{
+    display: flex;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+a{
+    color: white;
+}
+
+th{
+    text-align: center;
+    font-size: 30px;
+}
+
+img{
+    width: 250px;
+}
+
+button{
+    background-color: beige;
+    border-color: black;
+    color: #822323;
+    width: 100%;
+}
+
+legend{
+    color: black;
+}
+
+fieldset{
+    border-radius: 10%;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 330px;
+    border-color: #822323;
+    background-color: #b52a2ad6;
+    color: rgb(255, 255, 255);
+}
+
+.login{
+    border-radius: 5%;
+    width: 300px;
+    height: 170px;
+}
+
+.container{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.registro{
+    text-align: center;
+    color: rgb(236, 204, 44);
+}
+
+#desing{
+    align-items: center;
+    background-size:cover;
+    background-color: #B52A2A;
+    background-image: url(img/banner.png);
+}
+
+#references{
+    justify-content: end;
+    align-items: center;
+    height: 40px;
+    background-color: #822323;
+}
+
+#references a{
+    color:beige;
+}
+
+#list{
+    justify-content:left;
+    align-items: center;
+    color:beige;
+}
+
+#down-style img{
+    width: 600px;
+    height: 200px;
+}
+
+.round{
+    border-radius: 100%;
+}
+
+.with-border{
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: 20px outset #822323;
+    background-color: #fbebb1;
+}
+
+.books{
+    text-align: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+    font-weight:900;
+}
+
+#specific-book img{
+    width: 400px;
+    height: 100%;
+}
+
+#specific-book h1{
+    font-size: 50px;
+    margin: 0%;
+    color: #822323;
+    text-align: center;
+}
+#specific-book{
+    margin: 0%;
+    text-align: justify;
+}

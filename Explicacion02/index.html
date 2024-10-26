@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Práctica 02: Javascript</title>
+
+    <div class="container" id="references">
+        <table>
+            <tr>
+                <td><a href="/index.html">Volver a la lista de prácticas</a></td>
+            </tr>
+        </table>
+    </div>
+</head>
+<body>
+    <!--Lenguaje de tipado dinámico, en una variable no se le tiene que definir un tipo
+        de dato. Podemos hacer conversiones implícitas en cuanto a tipos de datos-->
+    <h1>Práctica 02: Javascript</h1>
+    <input type="text" name="nombre" id="txt-nombre" placeholder="Ingrese su nombre">
+    <button id="btn-action" type="button">Realizar acción</button>
+
+    <!--El código javascript se puede ingresar dentro de html con la etiqueta
+        <script>
+             
+        Es posible ponerlo en el head, sin embargo a la hora de ejecutarlo puede
+        causar valores nulos, puesto que se ejecuta antes de que se creen los objetos
+        que requiere. Podemos evitar esto si agregamos 'defer' a la sentencia.
+        Eso quiere decir que se ejecute al terminar de cargar el HTML
+        <head
+            <script defer src="js/index.js"></script>
+        </head>
+        Sugerencia personal del profe: Poner los scripts hasta abajo de todo
+    -->
+    
+    <br>
+
+    <p>
+        User-Agent: <strong id="s-user-agent"></strong>
+    </p>
+    
+    <!--Crear elementos HTML con javascript y maicena-->
+    <input type="text" name="item" id="txt-item" placeholder="Nombre del item">
+    <button id="btn-agregar-item" type="button">Agregar Item a la Lista</button>
+    <!--Agregar lista vacía donde se ingresarán los elementos-->
+    <ul id="ul-lista"></ul>
+
+    <div class="container" id="down-style">
+        <img src="img/foot.png">
+    </div>
+    <div class="container">
+        <br>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
