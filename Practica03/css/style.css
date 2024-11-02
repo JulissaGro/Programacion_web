@@ -1,0 +1,141 @@
+body {
+  background-color: #0e0e0e;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  margin: 0;
+  color: #f3f3f3; /* Color de texto por defecto */
+}
+
+.container {
+  position: sticky;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#references {
+  justify-content: end;
+  align-items: center;
+  height: 40px;
+  background: linear-gradient(
+    315deg,
+    rgba(95, 67, 174, 1) 0%,
+    rgba(227, 46, 121, 1) 40%,
+    rgba(238, 176, 39, 1) 100%
+  );
+}
+
+#references a {
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+#references a:hover {
+  text-decoration: underline;
+}
+
+.contenedor {
+  text-align: center;
+  padding: 20px;
+}
+
+.opciones {
+  margin-bottom: 20px;
+  background-color: #5f43ae;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2 {
+  margin: 10px 0;
+}
+
+h2 {
+  color: #eeb027;
+}
+
+.tabla{
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.tablero {
+  display: table;
+
+  gap: 2px;
+  margin-top: 20px;
+  table-layout: fixed;
+
+  border: 2px solid #888;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.celda {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #888;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s; /* Transiciones suaves */
+}
+
+.celda:hover {
+  background-color: #e87927;
+  transform: scale(1.05);
+}
+
+.celda.revelada {
+  background-color: #ddd;
+  cursor: default;
+}
+
+.celda.bandera {
+  background-color: #ffeb3b;
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  background-color: #e32e79;
+  border: none;
+  color: #f3f3f3;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  margin: 5px;
+}
+
+button:hover {
+  background: linear-gradient(
+    315deg,
+    rgba(95, 67, 174, 1) 0%,
+    rgba(227, 46, 121, 1) 40%,
+    rgba(238, 176, 39, 1) 100%
+  );
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/*
+*PALETA USADA
+#5f43ae Morado
+#e32e79 Rosa
+#f3f3f3 Blanco
+#0e0e0e negro
+#e87927 naranja
+#3e7d9e Azul/Celeste
+#eeb027 Amarillito
+#6da079 Verde
+*/

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Practica 03: Buscaminas</title>
+    <div class="container" id="references">
+        <table>
+          <tr>
+            <td><a href="../">Volver a la lista de prácticas</a></td>
+          </tr>
+        </table>
+    </div>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Buscaminas</h1>
+        <div class="opciones">
+            <div>
+                <h2>Personalizado</h2>
+                <label for="ancho">Ancho:</label>
+                <input type="number" id="ancho" min="5" value="5">
+                <label for="alto">Alto:</label>
+                <input type="number" id="alto" min="5" value="5">
+                <label for="minas">Minas:</label>
+                <input type="number" id="minas" min="1" value="8">
+                <button onclick="iniciarJuegoPersonalizado()">Iniciar Juego Personalizado</button>
+            </div>
+            <div>
+                <h2>Predeterminado</h2>
+                <button onclick="iniciarJuegoDificultad('facil')">Fácil</button>
+                <button onclick="iniciarJuegoDificultad('medio')">Medio</button>
+                <button onclick="iniciarJuegoDificultad('dificil')">Difícil</button>
+                <button onclick="iniciarJuegoDificultad('muyDificil')">Muy Difícil</button>
+                <button onclick="iniciarJuegoDificultad('leyenda')">Leyenda</button>
+            </div>
+        </div>
+        <div class="tabla">
+            <table id="tablero" class="tablero"></table>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</html>
