@@ -3,7 +3,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   text-align: center;
   margin: 0;
-  color: #f3f3f3; /* Color de texto por defecto */
+  color: #f3f3f3;
 }
 
 .container {
@@ -38,6 +38,8 @@ body {
 .contenedor {
   text-align: center;
   padding: 20px;
+  background-image: url(../img/catrina.jpeg);
+  background-size:cover;
 }
 
 .opciones {
@@ -53,14 +55,20 @@ h2 {
   margin: 10px 0;
 }
 
+h1{
+  color: #0e0e0e;
+  background: #e32e79;
+  border-radius: 5px;
+}
+
 h2 {
   color: #eeb027;
 }
 
-.tabla{
-  text-align: center;
+.tabla {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  align-content: center;
 }
 
 .tablero {
@@ -74,6 +82,8 @@ h2 {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: #0e0e0e;
+  opacity: 0.95;
 }
 
 .celda {

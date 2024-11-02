@@ -38,15 +38,15 @@ function iniciarJuegoDificultad(dificultad) {
   } else if (dificultad === "dificil") {
     filas = 10;
     columnas = 10;
-    cantidadMinas = 20;
+    cantidadMinas = 40;
   } else if (dificultad === "muyDificil") {
     filas = 12;
     columnas = 12;
-    cantidadMinas = 30;
+    cantidadMinas = 50;
   } else if (dificultad === "leyenda") {
     filas = 15;
     columnas = 15;
-    cantidadMinas = 50;
+    cantidadMinas = 70;
   }
 
   configurarTablero();
@@ -266,6 +266,8 @@ function verificarVictoria() {
       filas * columnas - cantidadMinas
     } safeponits`
   );
+  console.log(celdasDescubiertas >= filas * columnas - cantidadMinas);
+  
   console.log(
     `Llevas -> ${cantidadBanderas} banderas de un total de ${cantidadMinas} minas`
   );
