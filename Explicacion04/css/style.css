@@ -1,45 +1,71 @@
-body{
-    background-color: rgba(0, 130, 72, 0.186);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0%;
+body {
+  background-color: rgba(0, 130, 72, 0.186);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0%;
+  text-align: center;
 }
 
-h1{
-    font-weight:700px;
-    font-size: 45px;
-    text-align: center;
+h1 {
+  font-weight: 700px;
+  font-size: 45px;
+  text-align: center;
+}
+h3 {
+  font-weight: 700px;
+  text-align: center;
 }
 
-.content{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+strong {
+  font-size: 20px;
 }
 
-.container{
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content: center;
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.container table{
-    border-color: black;
+.container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
 }
 
-#references{
-    justify-content: end;
-    align-items: center;
-    height: 40px;
-    background-color:rgb(51, 153, 102);
+.personas {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-#references a{
-    color: aliceblue;
+.personas table{
+  border-collapse: collapse;
+  border: 2px solid;
+  border-color: rgb(22, 54, 43);
+  width: 40%;
 }
 
-#down-style img{
-    width: 700px;
-    height: 300px;
-    position:relative;    
+.personas table thead {
+  background-color: rgb(89, 181, 124);
+}
+
+.personas table tbody {
+  background-color: rgb(116, 196, 153);
+}
+
+#references {
+  justify-content: end;
+  align-items: center;
+  height: 40px;
+  background-color: rgb(51, 153, 88);
+}
+
+#references a {
+  color: aliceblue;
+}
+
+#down-style img {
+  width: 70%;
+  height: 500px;
+  position: relative;
 }
