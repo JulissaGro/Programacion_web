@@ -21,7 +21,7 @@
 <body>
     <!-- Esta es la otra forma -->
     <h1><?= $tituloPagina; ?></h1>
-    <?php require 'parte_html.php'?>
+    <?php require 'parte_html.php' ?>
     <div class="content">
         <div class="ejemploLista">
             <p>Ejemplo de generación de HTML dinámico usando PHP</p>
@@ -56,6 +56,7 @@
                     <th>Apellidos</th>
                     <th>Edad</th>
                     <th>Deportes Practicados</th>
+                    <th>Ver Detalle</th>
                 </tr>
             </thead>
 
@@ -72,6 +73,11 @@
                                 <?php endforeach ?>
                             </ul>
                         </td>
+                        <!-- Si el dato es una cadena de caracteres se debe de encodear
+                                pordría tener caracteres especiales que intervengan con el
+                                URL, por ello se usa urlencode 
+                        -->
+                        <td><a href="busqueda.php?q=<?= urlencode($p['nombre'] . ' ' . $p['apellidos']) ?>">VER DETALLE</a></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
@@ -80,15 +86,51 @@
     </div>
     <!-- Serializa los datos que están en los input y los envia al servidor, ya sea
             una petición GET o una petición POST
-        Normalmente en las peticiones GET los parámetros son enviados por la URL    
+        Normalmente en las peticiones GET los parámetros son enviados por la URL  
+        Hay 2 formas de ubicar el parámetro:
+            Por el nombre (name = '') Varios pueden tener el mismo nombre
+            Por el id (id = '') Identificador único para el atributo
+        2 Formas de enviar los datos:
+            Mediante los parámetros en la URL (GET)
+            Mediante el payload del request (POST)
      -->
     <h3>Formularios</h3>
-    <div>
-        <form action="busqueda.php" method="GET">
-            <label for="txt-q">Buscar: </label>
-            <input type="text" name="q" id="txt-q" placeholder="buscar..." required>
-            <input type="submit" value="Buscar">
-        </form>
+    <div class="form">
+        <fieldset>
+            <legend>Busqueda</legend>
+            <div>
+                <form action="https://www.google.com/search" method="GET">
+                    <label for="txt-q">Buscar: </label>
+                    <input type="text" name="q" id="txt-q" placeholder="buscar..." required>
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Login</legend>
+            <form action="do_login.php" method="POST">
+                <table>
+                    <tr>
+                        <td><label for="txt-username">Username: </label></td>
+                        <td><input type="text" name="username" id="txt-username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txt-password">Password: </label></td>
+                        <td><input type="password" name="password" id="txt-password" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="ENTER"></td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+        <fieldset>
+            <!-- Da flexibilidad en datos que se pueden enviar y manejar
+                    todo depende de lo que estemos manejando -->
+            <legend>AJAX</legend>
+            <p>Fecha Hora del server: <strong id="s-fecha-hora"></strong></p>
+            <button id="btn-get-fecha-hora">Actualizar Fecha Hora</button>
+        </fieldset>
     </div>
 
     <div class="container" id="down-style">
@@ -97,6 +139,8 @@
     <div class="container">
         <br>
     </div>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>
