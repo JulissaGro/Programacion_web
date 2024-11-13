@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 05 - Login</title>
+  </head>
+  <body>
+    <legend>Login</legend>
+    <form action="do_login.php" method="POST">
+      <table>
+        <tr>
+          <td><label for="txt-username">Username: </label></td>
+          <td>
+            <input type="text" name="username" id="txt-username" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="txt-password">Password: </label></td>
+          <td>
+            <input type="password" name="password" id="txt-password" required />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="ENTER" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

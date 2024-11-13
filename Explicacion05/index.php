@@ -2,6 +2,7 @@
 
 // Para importar otro archivo de código PHP
 require_once "config.php";
+require APP_PATH . "sesion_requerida.php";
 
 // Diferentes tipos de variables
 $tituloPagina = "Práctica 05 - Server Side Programming";  // variable string
@@ -39,6 +40,7 @@ $articulos = [
     <div class="header">
         <h1>Práctica 05</h1>
         <h2>Basic Server Side Programming</h2>
+        <h4>Bienvenido <?=$USUARIO_NOMBRE_COMPLETO?></h4>
     </div>
       
     <?php require APP_PATH . "html_parts/menu.php"; ?>
