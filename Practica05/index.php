@@ -23,18 +23,21 @@ $articulos = [
     ["titulo" => "Artículo 003", "id" => 3]   // array assoc
 ];
 
+// Cookies para obtener la cantidad de visitas a la págnia.
 $cantidadVisitas = 1;
-$expira = time() + (86400 * 30); //Expirará en 30 días (expresado en segundos)
-
-if (isset($_COOKIE["cantidadVisitas"])) {
-    $cantidadVisitas = (int)$_COOKIE["cantidadVisitas"];
-    $cantidadVisitas++;
+$segundosEnUnDia = 86400;
+$expira = time() + ($segundosEnUnDia * 30);  // tiempo en que expira, 30 día a partir de hoy
+if (isset($_COOKIE["cantidadVisitas"])) {  // ya existe la cookie?
+    $cantidadVisitas = (int)$_COOKIE["cantidadVisitas"];  // se obtiene el valor (que es un string)
+    $cantidadVisitas++; 
 }
 
+// Para establecer la cookie (esta irá en el response)
 setcookie(
-    "cantidadVisitas",
-    (string)$cantidadVisitas,
-    $expira
+    "cantidadVisitas",  // nombre de la cookie
+    (string)$cantidadVisitas,  // valor de la cookie
+    $expira   // cuándo exipira (fecha UNIX)
 );
 
+// Se regresa el view  del index  :)
 require APP_PATH . "views/index.view.php";
