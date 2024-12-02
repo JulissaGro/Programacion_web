@@ -104,16 +104,29 @@
             </div>
 
             <div class="card">
-                <h2>Enviar Archivos Entregable 2</h2>
+                <h2>Enviar Archivo | Entregable 2</h2>
                 <table>
                     <tbody>
                         <tr>
                             <td><label for="input-archivo-dos">Archivo: </label></td>
-                            <td><input type="file" name="archivo" id="input-archivo-dos" accept=".pdf,.jpg,.jpeg,.png,.gif" required /></td>
+                            <td><input type="file" name="archivo" id="input-archivo-dos" accept=".jpg,.jpeg,.png,.gif,.pdf" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="txt-descripcion">Descripción: </label></td>
+                            <td><input type="text" name="descripcion" id="txt-descripcion" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="slt-privacidad">Privacidad:</label></td>
+                            <td>
+                                <select id="slt-privacidad" name="privacidad">
+                                    <option value="0" selected = 'selected'>Privado</option>
+                                    <option value="1">Público</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input id="btn-enviar-dos" type="submit" value="Enviar Archivo" /></td>
+                            <td><input id="btn-enviar-archivo-dos" type="submit" value="Guardar Archivo" /></td>
                         </tr>
                     </tbody>
                 </table>

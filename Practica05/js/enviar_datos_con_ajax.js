@@ -15,36 +15,41 @@ const txtOtroDato = document.querySelector("#txt-otro-dato");
 const inputArchivo = document.querySelector("#input-archivo");
 const btnEnviarArchivo = document.querySelector("#btn-enviar-archivo");
 
-const inputArchivoDos = document.querySelector("#input-archivo-dos");
-const btnEnviarArchivoDos = document.querySelector("#btn-enviar-dos");
+const inputArchivoDos = document.getElementById("input-archivo-dos");
+const descripcion = document.getElementById("txt-descripcion");
+const privacidad = document.getElementById("slt-privacidad");
+const btnEnviarArchivoDos = document.getElementById("btn-enviar-archivo-dos");
 
 //Evento click del botón utilizado para el entregable
 btnEnviarArchivoDos.addEventListener("click", async e => {
     e.preventDefault();
-    alert("HOLA");
 
-    if(!inputArchivoDos.files.length){
+    if (!inputArchivoDos.files.length) {
         inputArchivoDos.focus();
         return;
     }
 
     const datos = new FormData();
     datos.append('archivo', inputArchivoDos.files[0]);
+    datos.append('descripcion', descripcion.value);
+    datos.append('privacidad', privacidad.value);
 
     const res = await fetch(
-        `${APP_ROOT}ajax/guardar_archivo_dos.php`,
-        {method: "POST", body: datos}
+        `${APP_ROOT}ajax/guardar_archivo_dos.php`, 
+        { method: "POST", body: datos }
     );
-    
-    const resObj = await res.json();
+
+    const resObj = await res.json();  
 
     if (resObj.error) {
         alert(resObj.error);
     }
     if (resObj.mensaje) {
-        inputArchivo.value = "";
+        inputArchivoDos.value = "";
+        descripcion.value = "";
+        privacidad.value = "0";
         alert(resObj.mensaje);
-    } 
+    }
 
 });
 
