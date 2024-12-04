@@ -1,5 +1,7 @@
 <!-- Listar los juegos -->
 <?php
+require_once "config.php";
+
 //URL del endpoint que vamos a llamar
 $urlGetGames = "http://primosoft.com.mx/games/api/getgames.php";
 

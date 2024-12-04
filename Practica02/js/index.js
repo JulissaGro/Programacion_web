@@ -48,9 +48,9 @@ function empezarJuego() {
 function actualizarTiempoEnPantalla() {
   if (juegoIniciado) {
     // Convertir a segundos
-    tiempoTotal += 0.1; // Incrementa el tiempo total en 0.1 segundos
+    tiempoTotal += 100; // Incrementa el tiempo total en 1000 milisegundos
     // Con 2 decimales
-    stiempoSegundos.textContent = tiempoTotal.toFixed(2);
+    stiempoSegundos.textContent = tiempoTotal;
   }
 }
 
@@ -130,9 +130,14 @@ function movimientoCom() {
 // Comprueba si hay un ganador
 function verificaVictoria(jugadorEnTurno) {
   const posiblesVictorias = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], //Horizontal
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], //Vertical
-    [0, 4, 8], [2, 4, 6], //Diagonal
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8], //Horizontal
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8], //Vertical
+    [0, 4, 8],
+    [2, 4, 6], //Diagonal
   ];
 
   for (let i = 0; i < posiblesVictorias.length; i++) {
@@ -149,7 +154,7 @@ function verificaVictoria(jugadorEnTurno) {
 }
 
 // Termina el juego
-function finalizaJuego(jugadorEnTurno) {
+async function finalizaJuego(jugadorEnTurno) {
   const tiempo = stiempoSegundos.textContent;
 
   if (jugadorEnTurno === true) {
@@ -174,10 +179,30 @@ function finalizaJuego(jugadorEnTurno) {
   }
 }
 
-// Guarda el ranking en LocalStorage
-function agregaARanking(nombre, tiempo) {
+// Guarda el ranking en LocalStorage y API
+async function agregaARanking(nombre, tiempo) {
   const ranking = JSON.parse(localStorage.getItem("ranking")) || [];
   const date = new Date().toLocaleString();
+
+  const datos = new FormData();
+  datos.append("game", "El super juego de TIC-TAC-TOE");
+  datos.append("player", nombre);
+  datos.append("score", tiempo);
+
+  const res = await fetch("ajax/add_score.php", {
+    method: "POST",
+    body: datos,
+  });
+
+  if (!res.ok) throw new Error("Error en la solicitud al servidor.");
+
+  const resObj = await res.json();
+
+  if (resObj.error) {
+    alert("Error: " + resObj.message);
+  } else {
+    alert("Éxito: " + resObj.message);
+  }
 
   ranking.push({ nombre, tiempo, date });
 
@@ -197,7 +222,7 @@ function muestraRanking() {
 
   for (let i = 0; i < ranking.length; i++) {
     const li = document.createElement("li");
-    li.textContent = `${ranking[i].tiempo}'s ${ranking[i].nombre} ${ranking[i].date}`;
+    li.textContent = `${ranking[i].tiempo}'ms ${ranking[i].nombre} ${ranking[i].date}`;
     listaRanking.appendChild(li);
   }
 }

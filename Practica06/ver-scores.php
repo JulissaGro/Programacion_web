@@ -1,5 +1,4 @@
 <?php
-
 $game = filter_input(INPUT_GET, "game");
 if (!$game) {
     echo "Es necesario el parámetro url";
@@ -7,7 +6,7 @@ if (!$game) {
 }
 
 $gameEncoded = urlencode($game);
-$urlGetScore = "http://primosoft.com.mx/games/api/getscores.php?game=$gameEncoded";
+$urlGetScore = "http://primosoft.com.mx/games/api/getscores.php?game=$gameEncoded&orderAsc=1";
 
 $ch = curl_init();
 curl_setopt_array(
@@ -22,5 +21,8 @@ curl_setopt_array(
 
 $responseContent = curl_exec($ch);
 curl_close($ch);
+
+//Tener un json de la respuesta
+$scores = json_decode($responseContent, true);
 
 include "views/ver-scores.view.php";

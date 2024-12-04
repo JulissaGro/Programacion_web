@@ -10,7 +10,7 @@
     <h2>Games:</h2>
     <ul>
         <?php foreach ($games as $game): ?>
-            <li><?=$game?></li>
+            <li><a href="<?=APP_ROOT?>/ver-scores.php?game=<?=$game?>&orderAsc=0"><?=$game?></a></li>
         <?php endforeach; ?>
     </ul>
 
