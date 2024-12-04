@@ -15,7 +15,7 @@ function iniciarConPrimerClic(e) {
 }
 
 // Configuración inicial del tablero
-function configurarTablero() {
+async function configurarTablero() {
   const celdas = document.querySelectorAll("#table_tictactoe td");
   for (let i = 0; i < celdas.length; i++) {
     celdas[i].addEventListener("click", iniciarConPrimerClic);
@@ -181,9 +181,6 @@ async function finalizaJuego(jugadorEnTurno) {
 
 // Guarda el ranking en LocalStorage y API
 async function agregaARanking(nombre, tiempo) {
-  const ranking = JSON.parse(localStorage.getItem("ranking")) || [];
-  const date = new Date().toLocaleString();
-
   const datos = new FormData();
   datos.append("game", "El super juego de TIC-TAC-TOE");
   datos.append("player", nombre);
@@ -203,29 +200,26 @@ async function agregaARanking(nombre, tiempo) {
   } else {
     alert("Éxito: " + resObj.message);
   }
-
-  ranking.push({ nombre, tiempo, date });
-
-  ranking.sort((a, b) => a.tiempo - b.tiempo);
-
-  if (ranking.length > 10) ranking.splice(10);
-
-  localStorage.setItem("ranking", JSON.stringify(ranking));
 }
 
 // Muestra el ranking en pantalla
-function muestraRanking() {
+async function muestraRanking() {
   const listaRanking = document.getElementById("ol_ranking");
-  listaRanking.innerHTML = "";
+  listaRanking.innerHTML = ""; // Limpiar la lista antes de agregar nuevos elementos
 
-  const ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+  const res = await fetch("ajax/index.php");
+  if (!res.ok) throw new Error("Error al recuperar el ranking.");
+  const ranking = await res.json();
 
-  for (let i = 0; i < ranking.length; i++) {
+  console.log(ranking);
+  
+
+  ranking.forEach(top => {
     const li = document.createElement("li");
-    li.textContent = `${ranking[i].tiempo}'ms ${ranking[i].nombre} ${ranking[i].date}`;
+    li.textContent = `${top.score}ms ${top.player} ${top.date}`;
     listaRanking.appendChild(li);
-  }
+  });
 }
 
 configurarTablero();
-muestraRanking();
+
