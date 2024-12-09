@@ -212,7 +212,6 @@ async function muestraRanking() {
   const ranking = await res.json();
 
   console.log(ranking);
-  
 
   ranking.forEach(top => {
     const li = document.createElement("li");
